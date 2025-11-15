@@ -3,10 +3,5 @@
     "title": "Engine Control Unit — Karman Space Programme",
     "description": "STM32-based ECU with CAN bus, high-current valve drivers, and high-speed sensing.",
     "image": "images/ecu.jpg"
-  },
-  {
-    "title": "High-Speed Data Acquisition Board",
-    "description": "10 MHz SPI interface, precision analog front end, real-time firmware.",
-    "image": "images/data-acq.jpg"
   }
 ]
