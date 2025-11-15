@@ -37,26 +37,23 @@
 <!-- PROJECTS GRID -->
 <section id="projects" class="max-w-6xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pb-20"></section>
 
+<script src="projects.js"></script>
 <script>
-// Load project cards from external JSON
-fetch("projects.json")
-    .then(res => res.json())
-    .then(projects => {
-        const container = document.getElementById("projects");
-        projects.forEach((p, i) => {
-            const card = document.createElement("div");
-            card.className = "fade-in bg-white rounded-lg shadow hover:shadow-lg transition p-4";
-            card.style.animationDelay = `${i * 0.1}s`;
+    const container = document.getElementById("projects");
+    projects.forEach((p, i) => {
+        const card = document.createElement("div");
+        card.className = "fade-in bg-white rounded-lg shadow hover:shadow-lg transition p-4";
+        card.style.animationDelay = `${i * 0.1}s`;
 
-            card.innerHTML = `
-                <img src="${p.image}" class="rounded mb-3">
-                <h3 class="text-xl font-semibold mb-1">${p.title}</h3>
-                <p class="text-gray-600 text-sm">${p.description}</p>
-            `;
-            container.appendChild(card);
-        });
+        card.innerHTML = `
+            <img src="${p.image}" class="rounded mb-3">
+            <h3 class="text-xl font-semibold mb-1">${p.title}</h3>
+            <p class="text-gray-600 text-sm">${p.description}</p>
+        `;
+        container.appendChild(card);
     });
 </script>
+
 
 </body>
 </html>
