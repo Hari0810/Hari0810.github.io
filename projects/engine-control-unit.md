@@ -22,3 +22,6 @@ for a liquid bipropellant rocket engine.
 - PCB Layout Design
 - Mixed Signal Design
 - High Speed Design
+- CAN Protocol Debugging
+- System-level Debugging
+- Rapid Prototyping
