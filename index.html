@@ -40,7 +40,7 @@ const container = document.getElementById("projects");
 
 projects.forEach((p, i) => {
     const link = document.createElement("a");
-    link.href = `projects/${p.slug}.html`;
+    link.href = `article.html?slug=${p.slug}`;
     link.className =
         "fade-in block bg-white rounded-lg shadow hover:shadow-lg hover:-translate-y-1 transition p-4";
 
