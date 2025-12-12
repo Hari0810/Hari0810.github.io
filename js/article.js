@@ -1,23 +1,22 @@
 const params = new URLSearchParams(window.location.search);
 const slug = params.get("slug");
 
+const content = document.getElementById("content");
+
 if (!slug) {
-  document.getElementById("content").innerHTML =
-    "<p class='text-red-600'>No article specified.</p>";
-  throw new Error("Missing slug");
+  content.innerHTML = "<p>Missing article slug.</p>";
+  throw new Error("No slug");
 }
 
-fetch(`projects/${slug}.md`)
+fetch(`${slug}.md`)
   .then(res => {
-    if (!res.ok) throw new Error("Article not found");
+    if (!res.ok) throw new Error("Markdown not found");
     return res.text();
   })
   .then(md => {
-    document.title = slug.replace(/-/g, " ");
-    document.getElementById("content").innerHTML = marked.parse(md);
+    content.innerHTML = marked.parse(md);
   })
   .catch(err => {
-    document.getElementById("content").innerHTML =
-      "<p class='text-red-600'>Article not found.</p>";
+    content.innerHTML = "<p>Article not found.</p>";
     console.error(err);
   });
