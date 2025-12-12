@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>My Engineering Portfolio</title>
 
-<!-- Tailwind CSS -->
 <script src="https://cdn.tailwindcss.com"></script>
 
 <style>
@@ -18,42 +17,45 @@
     100% { opacity: 1; transform: translateY(0); }
 }
 </style>
-
 </head>
 
 <body class="bg-gray-100 text-gray-900">
 
-<!-- NAVBAR -->
 <nav class="w-full py-4 px-6 bg-white shadow flex justify-between items-center sticky top-0 z-50">
     <h1 class="text-xl font-semibold">Harishan Ganeshan - Engineering Portfolio</h1>
 </nav>
 
-<!-- HEADER -->
 <header class="text-center py-16 fade-in">
     <h2 class="text-4xl font-bold mb-2">Projects & Achievements</h2>
     <p class="text-gray-600">Embedded Systems • Rocketry • PCB Design • FPGA HDL Design • Software</p>
 </header>
 
-<!-- PROJECTS GRID -->
-<section id="projects" class="max-w-6xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pb-20"></section>
+<section id="projects"
+    class="max-w-6xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pb-20">
+</section>
 
 <script src="projects.js"></script>
 <script>
-    const container = document.getElementById("projects");
-    projects.forEach((p, i) => {
-        const card = document.createElement("div");
-        card.className = "fade-in bg-white rounded-lg shadow hover:shadow-lg transition p-4";
-        card.style.animationDelay = `${i * 0.1}s`;
+const container = document.getElementById("projects");
 
-        card.innerHTML = `
-            <img src="${p.image}" class="rounded mb-3">
-            <h3 class="text-xl font-semibold mb-1">${p.title}</h3>
-            <p class="text-gray-600 text-sm">${p.description}</p>
-        `;
-        container.appendChild(card);
-    });
+projects.forEach((p, i) => {
+    const link = document.createElement("a");
+    link.href = `projects/${p.slug}.html`;
+    link.className =
+        "fade-in block bg-white rounded-lg shadow hover:shadow-lg hover:-translate-y-1 transition p-4";
+
+    link.style.animationDelay = `${i * 0.1}s`;
+
+    link.innerHTML = `
+        <img src="${p.image}" class="rounded mb-3">
+        <h3 class="text-xl font-semibold mb-1">${p.title}</h3>
+        <p class="text-gray-600 text-sm">${p.description}</p>
+        <p class="mt-2 text-sm text-blue-600">Read more →</p>
+    `;
+
+    container.appendChild(link);
+});
 </script>
-
 
 </body>
 </html>
