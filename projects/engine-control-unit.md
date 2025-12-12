@@ -16,13 +16,9 @@ for a liquid bipropellant rocket engine.
 - 24V / 2A solenoid valve drivers
 - High-speed SPI sensors (10 MHz)
 
-## My Contributions
+## Skills
 
-- CAN protocol implementation
-- Hardware bring-up and debugging
-- Firmware architecture and safety checks
-
-## Lessons Learned
-
-- Importance of deterministic timing
-- Debugging mixed hardware–software faults
+- Schematic Design
+- PCB Layout Design
+- Mixed Signal Design
+- High Speed Design
