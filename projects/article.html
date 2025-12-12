@@ -1,32 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Project</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Project</title>
 
-<script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind + Typography -->
+  <script>
+    tailwind = {
+      config: {
+        plugins: [tailwindcssTypography],
+      }
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
 
-<!-- Markdown parser -->
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <!-- Markdown parser -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <!-- Custom prose tweaks -->
+  <style>
+    /* Code blocks */
+    .prose pre {
+      background-color: #0f172a; /* slate-900 */
+      color: #e5e7eb;            /* gray-200 */
+      padding: 1rem;
+      border-radius: 0.5rem;
+      overflow-x: auto;
+    }
+
+    .prose code {
+      background-color: #f1f5f9; /* slate-100 */
+      padding: 0.2em 0.4em;
+      border-radius: 0.25rem;
+      font-size: 0.9em;
+    }
+
+    /* Images */
+    .prose img {
+      border-radius: 0.5rem;
+      margin: 2rem auto;
+    }
+
+    /* Section headers */
+    .prose h2 {
+      border-bottom: 1px solid #e5e7eb;
+      padding-bottom: 0.3rem;
+    }
+  </style>
 </head>
 
 <body class="bg-gray-100 text-gray-900">
 
-<nav class="w-full py-4 px-6 bg-white shadow">
-  <a href="index.html" class="text-sm text-blue-600 hover:underline">
-    ← Back to projects
-  </a>
-</nav>
+  <!-- Navbar -->
+  <nav class="w-full py-4 px-6 bg-white shadow">
+    <a href="../index.html" class="text-sm text-blue-600 hover:underline">
+      ← Back to projects
+    </a>
+  </nav>
 
-<article
-  id="content"
-  class="max-w-3xl mx-auto px-6 py-12 bg-white shadow rounded mt-8 prose prose-gray max-w-none">
-  Loading…
-</article>
+  <!-- Article container -->
+  <article
+    id="content"
+    class="prose prose-slate max-w-3xl mx-auto bg-white p-8 mt-8 rounded shadow">
+    Loading…
+  </article>
 
-<script src="../js/article.js"></script>
-
+  <!-- Article loader -->
+  <script src="../js/article.js"></script>
 
 </body>
 </html>
