@@ -115,11 +115,18 @@ Use the REV Hardware Client to downgrade the Spark Max to Firmware Version 24. I
 - Install WireShark
 - Connect the MAX to a PC running REV Hardware Client
 
-### Steps to capture USB packets
+### Steps to capture and replay USB packets
 - Follow the procedure outlined in the usbrply github repo, under 'Sample workflows > Capturing Windows traffic and replaying traffic in Python'
+- Just after you start recording in Wireshark, run the desired action to decode from Rev Hardware Client
+- The idea is that Wireshark saves the USB frames to a .pcapng file.
+- The .pcapng can be used to generate a `replay.py` Python script via usbrply.
+- `replay.py`, as the name suggests, can replay what was recorded over USB
 
 ### Decoding a USB packet
-- TBC
+- The USB frames can be found within the `replay.py` file itself
+- They will be of the form:
+
+``` ```
 
 ### My modified Python script to run CAN-over-USB commands
 
