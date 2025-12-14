@@ -6,14 +6,12 @@ A guide to using the REV Robotics motor controller outside the FRC ecosystem, as
 
 ## Overview
 
-Ever since I posted on Reddit about how I was able to control a Spark MAX over CAN BUS via Arduino, I’ve had quite a few questions about it, so I will go through the entire setup and methodology here.
-
 It is possible for the Spark MAX to be controlled over PWM alone - but using CAN BUS unlocks an array of new features, such as:
 - PID-based control over motor position and velocity
 - "on-the-fly" PID tuning
 - being able to receive analog sensor output + transmit over CAN BUS
 
-This was intended to be used on KSP's first liquid bipropellant rocket, Vega, in conjunction with the NEO 550 motor. However, due to multiple niche issues, which were undebuggable due to the closed-source nature of the firmware, we chose to bin the Spark MAX in favour of an open-source FOC-based VESC-compatible controller that supports local scripting in LispBM.
+The Spark MAX was intended to be used on KSP's first liquid bipropellant rocket, Vega, in conjunction with the NEO 550 motor. However, due to multiple niche issues, which were undebuggable due to the closed-source nature of the firmware, we chose to bin the Spark MAX in favour of an open-source FOC-based VESC-compatible controller that supports local scripting in LispBM.
 
 ## Contents
 
