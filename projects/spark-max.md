@@ -14,7 +14,10 @@ Ever since I posted on Reddit about how I was able to use Arduino to control a S
 - How to control via an Arduino/STM32/etc instead of FRC hardware
 
 ## Dissasembly
-TBC
+![PCB1 Top View](../images/sm1-top.jpeg)
+![PCB1 Bottom View](../images/sm1-bottom.jpeg)
+![PCB2 Top View](../images/sm2-top.jpeg)
+![PCB2 Bottom View](../images/sm2-bottom.jpeg)
 
 ### Parts Used
 
