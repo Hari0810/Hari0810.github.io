@@ -48,6 +48,7 @@ In progress
 ## CAN BUS control via an Arduino/STM32/non-FRC hardware
 
 ### How is it possible? 
+- CAN BUS works more or less the same, regardless of the device
 - Any CAN BUS command will contain a Frame ID and a data payload 
 - The Frame ID corresponds to the type of command - e.g. duty cycle control, position control, heartbeat, etc.
 - The data bytes corresponds to "how much" of the command you want. Naturally a bigger number = higher value
@@ -59,9 +60,10 @@ In progress
 ### CAN Frames
 
 ``` 
-# Snippet from amadorjosephg's Arduino sketch
+// Snippet from amadorjosephg's Arduino sketch
+// Lists all Frame IDs
 
-enum control_mode {
+enum control_mode { 
   Duty_Cycle_Set = 0x2050081,
   Speed_Set = 0x2050480,
   Smart_Velocity_Set = 0x20504C0,
@@ -87,6 +89,7 @@ Via firmware, the Spark MAX can be programmed to send out periodic "status frame
 
 ### Status Frames
 
+```
 enum status_frame_id {
   status_0 = 0x2051800,
   status_1 = 0x2051840,
@@ -94,7 +97,7 @@ enum status_frame_id {
   status_3 = 0x20518C0,
   status_4 = 0x2051900
 };
-
+```
 
 ### Setup
 Use the REV Hardware Client to downgrade the Spark Max to Firmware Version 24. It will not work on Version 25 and above.
