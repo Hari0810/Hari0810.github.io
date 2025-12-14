@@ -1,28 +1,26 @@
-# Engine Control Unit — Karman Space Programme
+# SPARK MAX Motor Controller - A Guide
+ 
+A guide to using the REV Robotics device outside the FRC ecosystem, as well as a thorough breakdown and reverse-engineering of the internals.
 
-STM32-based ECU for a liquid bipropellant rocket engine.
-
-![ECU](../images/ecu.jpg)
+![SPARK MAX](../images/spark-max.jpeg)
 
 ## Overview
 
-This project involved the design and firmware development of an Engine Control Unit
-for a liquid bipropellant rocket engine.
+Ever since I posted on Reddit about how I was able to use Arduino to control a Spark Max outside of FRC uses, I’ve had quite a few questions about it, so I will go through the entire setup and methodology here.
 
-## Key Features
+## Contents
 
-- STM32 microcontroller
-- 1 Mbps CAN bus
-- 24V / 2A solenoid valve drivers
-- High-speed SPI sensors (10 MHz)
+- Disassembly and Circuit schematic
+- How to control via an Arduino/STM32/etc instead of FRC hardware
 
-## My Contributions
+## Dissasembly
+TBC
 
-- CAN protocol implementation
-- Hardware bring-up and debugging
-- Firmware architecture and safety checks
+## Circuit Schematic
+In progress
 
-## Lessons Learned
+## Guide to controlling via an Arduino/STM32/non-FRC hardware
+In progress
 
-- Importance of deterministic timing
-- Debugging mixed hardware–software faults
+## Frequently Asked Questions
+In progress
