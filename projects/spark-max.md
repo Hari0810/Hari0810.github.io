@@ -59,7 +59,7 @@ In progress
 
 ### CAN Frames
 
-``` 
+```c++ 
 // Snippet from amadorjosephg's Arduino sketch
 // Lists all Frame IDs
 
