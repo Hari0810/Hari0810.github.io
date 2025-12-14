@@ -13,7 +13,7 @@ It is possible for the Spark MAX to be controlled over PWM alone - but using CAN
 - "on-the-fly" PID tuning
 - being able to receive analog sensor output + transmit over CAN BUS
 
-This was intended to be used on KSP's first liquid bipropellant rocket, Vega, in conjunction with the NEO 550 motor. However, due to multiple niche and quirky issues, we chose to bin the Spark MAX in favour of an open-source FOC-based VESC-compatible controller that supports Lisp scripting.
+This was intended to be used on KSP's first liquid bipropellant rocket, Vega, in conjunction with the NEO 550 motor. However, due to multiple niche issues, which were undebuggable due to the closed-source nature of the firmware, we chose to bin the Spark MAX in favour of an open-source FOC-based VESC-compatible controller that supports local scripting in LispBM.
 
 ## Contents
 
@@ -39,7 +39,7 @@ Motor Driver (2nd PCB, U1) - DRV8320S
 
 MOSFET (Q1-6) - PSMN1R0-30YLD
 
-CAN Transceiver (1st PCB, U3) - 6563MKD
+CAN Transceiver (1st PCB, U3) - hard to say. Other sources suggest that it is a "6563MKD" which I assume refers to the ATA6563.
 
 ### Further References
 A similar breakdown can be found here: https://www.chiefdelphi.com/t/rev-spark-max-teardown/461514/3
