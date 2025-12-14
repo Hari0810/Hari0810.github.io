@@ -100,7 +100,8 @@ enum status_frame_id {
 ```
 
 ### Setup
-Use the REV Hardware Client to downgrade the Spark Max to Firmware Version 24. It will not work on Version 25 and above.
+>[!info]
+>IMPORTANT: Use the REV Hardware Client to downgrade the Spark Max to Firmware Version 24. It will not work on Version 25 and above.
 
 ### For Arduino 
 
