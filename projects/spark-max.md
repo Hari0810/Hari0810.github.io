@@ -78,7 +78,7 @@ Use the REV Hardware Client to downgrade the Spark Max to Firmware Version 24. I
 ##### Software
 - Refer to https://drive.google.com/drive/folders/1NHbtK66bta3y3E9ZzLP2e2HECjd-sEGd for Arduino sketches.
 - Note: These were not written by me, but by an "amadorjosephg", judging from his email.
-- WARNING: There have been "glitching" issues with the MCP2515 method in the past, regardless of the CAN library used. This may be at least improved, but perhaps not fully fixed, by lowering the frequency of Heartbeat commands sent.
+- WARNING: There have been "glitching" issues with the MCP2515 method in the past, regardless of the CAN library used. When using duty cycle control, the motor speed dips suddenly and then goes back to normal. This may be improved by lowering the frequency of Heartbeat commands sent.
 
 #### For STM32
 
