@@ -78,10 +78,14 @@ Use the REV Hardware Client to downgrade the Spark Max to Firmware Version 24. I
 ##### Software
 - Refer to https://drive.google.com/drive/folders/1NHbtK66bta3y3E9ZzLP2e2HECjd-sEGd for Arduino sketches.
 - Note: These were not written by me, but by an "amadorjosephg", judging from his email.
+- WARNING: There have been "glitching" issues with the MCP2515 method in the past, regardless of the CAN library used. This may be at least improved, but perhaps not fully fixed, by lowering the frequency of Heartbeat commands sent.
 
 #### For STM32
 
-- You have two options - use SPI or the inbuilt CAN transceiver
+- You have two options - use an SPI port or a CAN port
+- Whether or not your STM32 board natively supports CAN BUS depends on the model number
+- CAN is typically supported on F-series, G-series and H-series MCUs (e.g. F303, G474, H743). It won't be supported by L-series
+- Although your STM32 may have an inbuilt CAN controller, it will not have a CAN transceiver. You will need to buy an external one such as the TJA1051.
 
 ##### Option 1: SPI Control
 - SPI is the same procedure as for Arduino
@@ -89,6 +93,8 @@ Use the REV Hardware Client to downgrade the Spark Max to Firmware Version 24. I
 
 ##### Option 2: Inbuilt CAN Controller + CAN Transceiver
 - Obtain an external CAN tranceiver, e.g. TJA1051
+- Connect to the RX and TX pins of your chosen CAN port on the STM32
+ - Note that RX->RX and TX->TX. This is not like UART where it connects the other way round.
 - Code TBC
 
 ### Other open-source communication projects from the community
@@ -100,14 +106,17 @@ Use the REV Hardware Client to downgrade the Spark Max to Firmware Version 24. I
 - Ensure that all MAXes are tied to a common ground.
 - Ensure all MAXes have a unique Device ID and that you are writing to that specific ID
 - CAN Bitrate MUST be 1MBPS
-- Avoid powering at 24V - the firmware starts bugging out. Must be a little lower.
+- Avoid powering at 24V or above - the firmware starts bugging out despite 24V technically being within spec. 
 
 ## Reverse-engineering Version 25
 
 ### Setup
-- Download usbrply
-- Download WireShark
+- Install usbrply - https://github.com/JohnDMcMaster/usbrply
+- Install WireShark
 - Connect the MAX to a PC running REV Hardware Client
+
+### Steps
+- Follow the procedure outlined in the usbrply github repo, under 'Sample workflows > Capturing Windows traffic and replaying traffic in Python'
 
 ### Procedure
 - TBC
