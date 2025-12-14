@@ -47,14 +47,14 @@ In progress
 
 ## CAN BUS control via an Arduino/STM32/non-FRC hardware
 
-### The way it works: 
+### How is it possible? 
 - Any CAN BUS command will contain a Frame ID and a data payload 
-- The Frame ID corresponds to the type of commands - e.g. duty cycle control, position control, heartbeat, etc.
-- The data bits corresponds to "how much" of the command you want: bigger number = higher value
-- In order for CAN control to function, a Heartbeat command must be send at least once every 100ms
+- The Frame ID corresponds to the type of command - e.g. duty cycle control, position control, heartbeat, etc.
+- The data bytes corresponds to "how much" of the command you want. Naturally a bigger number = higher value
+- In order for CAN communication to function, a periodic Heartbeat command must be send at least once every 100ms
 - To execute a certain command, use the corresponding Frame ID + use the data bits to set quantity/"how much"
 - IMPORTANT: the Frame ID must be bitwise OR'd with the Device ID that the Spark MAX was assigned in Firmware via the REV Hardware Client before sending
- - in a network of MAXes, the Device ID allows you to command a specific motor controller
+ - In a network of MAXes, the Device ID allows you to command a specific motor controller
 
 ### Control Types
 These mainly correspond to those that can be found in Rev Hardware Client:
