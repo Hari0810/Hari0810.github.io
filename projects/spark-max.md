@@ -9,7 +9,7 @@ A guide to using the REV Robotics motor controller outside the FRC ecosystem, as
 Ever since I posted on Reddit about how I was able to control a Spark MAX over CAN BUS via Arduino, I’ve had quite a few questions about it, so I will go through the entire setup and methodology here.
 
 It is possible for the Spark MAX to be controlled over PWM alone - but using CAN BUS unlocks an array of new features, such as:
-- PID control for position and velocity
+- PID-based control over motor position and velocity
 - "on-the-fly" PID tuning
 - being able to receive analog sensor output + transmit over CAN BUS
 
