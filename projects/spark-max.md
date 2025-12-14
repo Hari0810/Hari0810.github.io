@@ -35,7 +35,7 @@ Microcontroller (1st PCB, U1) - STM32F302CC
 
 Motor Driver (2nd PCB, U1) - DRV8320S
 
-MOSFET (Q1-6) - hard to say. The markings are "10030L Prm 2420 67 1911". Other sources suggest the PSMN1R0-30YLD, which when Googled has similar but not exactly identical markings. Overall the MOSFET is very likely to be rated for 30V. 
+MOSFET (Q1-6) - hard to say. The markings are "10030L Prm 2420 67 1911". Other sources suggest the PSMN1R0-30YLD, which when Googled has similar but not exactly identical markings. Overall the MOSFET is likely to be rated for 30V. 
 
 CAN Transceiver (1st PCB, U3) - hard to say. Other sources suggest that it is a "6563MKD" which I assume refers to the ATA6563.
 
