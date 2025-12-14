@@ -37,7 +37,7 @@ Microcontroller (1st PCB, U1) - STM32F302CC
 
 Motor Driver (2nd PCB, U1) - DRV8320S
 
-MOSFET (Q1-6) - PSMN1R0-30YLD
+MOSFET (Q1-6) - hard to say. The markings are "10030L Prm 2420 67 1911". Other sources suggest the PSMN1R0-30YLD, which when Googled has similar but not exactly identical markings. Overall the MOSFET is very likely to be rated for 30V. 
 
 CAN Transceiver (1st PCB, U3) - hard to say. Other sources suggest that it is a "6563MKD" which I assume refers to the ATA6563.
 
@@ -100,6 +100,7 @@ Use the REV Hardware Client to downgrade the Spark Max to Firmware Version 24. I
 - Ensure that all MAXes are tied to a common ground.
 - Ensure all MAXes have a unique Device ID and that you are writing to that specific ID
 - CAN Bitrate MUST be 1MBPS
+- Avoid powering at 24V - the firmware starts bugging out. Must be a little lower.
 
 ## Reverse-engineering Version 25
 
