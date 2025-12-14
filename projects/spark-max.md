@@ -1,6 +1,6 @@
 # SPARK MAX Motor Controller - A Guide
  
-A guide to using the REV Robotics device outside the FRC ecosystem, as well as a thorough breakdown and reverse-engineering of the internals.
+A guide to using the REV Robotics motor controller outside the FRC ecosystem, as well as a thorough breakdown and reverse-engineering of the internals. This motor controller is frequently paired with the NEO 550 motor.
 
 ![SPARK MAX](../images/spark-max.jpeg)
 
