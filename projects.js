@@ -2,7 +2,7 @@ const projects = [
   {
     title: "Engine Control Unit — Karman Space Programme",
     description: "STM32-based ECU with CAN bus, high-current valve drivers, and high-speed sensing.",
-    image: "images/ecu.jpg",
+    image: "images/ecu.png",
     slug: "engine-control-unit"
   },
   {
