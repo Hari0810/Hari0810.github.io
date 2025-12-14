@@ -52,7 +52,8 @@ In progress
 - The data bits corresponds to "how much" of the command you want: bigger number = higher value
 - In order for CAN control to function, a Heartbeat command must be send at least once every 100ms
 - To execute a certain command, use the corresponding Frame ID + use the data bits to set quantity/"how much"
-- IMPORTANT: the Frame ID must be bitwise OR'd with the Device ID that the Spark MAX was assigned in Firmware via the REV Hardware Client
+- IMPORTANT: the Frame ID must be bitwise OR'd with the Device ID that the Spark MAX was assigned in Firmware via the REV Hardware Client before sending
+ - in a network of MAXes, the Device ID allows you to command a specific motor controller
 
 ### Control Types
 These mainly correspond to those that can be found in Rev Hardware Client:
