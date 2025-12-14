@@ -48,7 +48,7 @@ In progress
 ## CAN BUS control via an Arduino/STM32/non-FRC hardware
 
 ### How is it possible? 
-- CAN BUS works more or less the same, regardless of the device
+- The basics of CAN BUS communication are more or less the same for any CAN-enabled device
 - Any CAN BUS command will contain a Frame ID and a data payload 
 - The Frame ID corresponds to the type of command - e.g. duty cycle control, position control, heartbeat, etc.
 - The data bytes corresponds to "how much" of the command you want. Naturally a bigger number = higher value
