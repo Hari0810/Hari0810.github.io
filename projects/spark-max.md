@@ -14,20 +14,24 @@ Ever since I posted on Reddit about how I was able to use Arduino to control a S
 - How to control via an Arduino/STM32/etc instead of FRC hardware
 
 ## Dissasembly
+
+1st PCB
 ![PCB1 Top View](../images/sm1-top.jpeg)
 ![PCB1 Bottom View](../images/sm1-bottom.jpeg)
+
+2nd PCB
 ![PCB2 Top View](../images/sm2-top.jpeg)
 ![PCB2 Bottom View](../images/sm2-bottom.jpeg)
 
 ### Parts Used
 
-Microcontroller - STM32F302CC
+Microcontroller (1st PCB, U1) - STM32F302CC
 
-Motor Driver - DRV8320S
+Motor Driver (2nd PCB, U1) - DRV8320S
 
-MOSFET - PSMN1R0-30YLD
+MOSFET (Q1-6) - PSMN1R0-30YLD
 
-CAN Transceiver - 6563MKD
+CAN Transceiver (1st PCB, U3) - 6563MKD
 
 ### Further References
 A similar breakdown can be found here: https://www.chiefdelphi.com/t/rev-spark-max-teardown/461514/3
