@@ -6,12 +6,17 @@ A guide to using the REV Robotics device outside the FRC ecosystem, as well as a
 
 ## Overview
 
-Ever since I posted on Reddit about how I was able to use Arduino to control a Spark Max outside of FRC uses, I’ve had quite a few questions about it, so I will go through the entire setup and methodology here.
+Ever since I posted on Reddit about how I was able to use Arduino to control a Spark Max over CAN BUS outside of FRC uses, I’ve had quite a few questions about it, so I will go through the entire setup and methodology here.
+
+It is possible for the Spark MAX to be controlled over PWM alone - but using CAN BUS unlocks an array of new features, such as:
+- PID control for position and velocity
+- "on-the-fly" PID tuning
+- being able to receive analog sensor output + transmit over CAN BUS
 
 ## Contents
 
 - Disassembly and Circuit schematic
-- How to control via an Arduino/STM32/etc instead of FRC hardware
+- How to control over CAN BUS via an Arduino/STM32/etc instead of FRC hardware
 
 ## Dissasembly
 
@@ -39,8 +44,42 @@ A similar breakdown can be found here: https://www.chiefdelphi.com/t/rev-spark-m
 ## Circuit Schematic
 In progress
 
-## Guide to controlling via an Arduino/STM32/non-FRC hardware
-In progress
+## CAN BUS control via an Arduino/STM32/non-FRC hardware
 
-## Frequently Asked Questions
-In progress
+### The way it works: 
+- Any CAN BUS command will contain a Frame ID and a data payload 
+- The Frame ID corresponds to the type of commands - e.g. duty cycle control, position control, heartbeat, etc.
+- The data bits corresponds to "how much" of the command you want: bigger number = higher value
+- In order for CAN control to function, a Heartbeat command must be send at least once every 100ms
+- To execute a certain command, use the corresponding Frame ID + use the data bits to set quantity/"how much"
+- IMPORTANT: the Frame ID must be bitwise OR'd with the Device ID that the Spark MAX was assigned in Firmware via the REV Hardware Client
+
+### Control Types
+These mainly correspond to those that can be found in Rev Hardware Client:
+- Heartbeat - required at least every 100ms (10Hz), althoug a higher frequency probably wouldn't hurt
+- Duty Cycle - the equivalent of using PWM to control the motor instead of CAN 
+- Position, Velocity, etc - these are control modes only available over CAN BUS
+
+### CAN Frames
+
+### Setup
+Use the REV Hardware Client to downgrade the Spark Max to Firmware Version 24. It will not work on Version 25 and above.
+
+### Software Overview
+
+#### For Arduino 
+
+Hardware
+MCP2515
+Any microcontroller that supports SPI
+
+Software
+Refer to https://drive.google.com/drive/folders/1NHbtK66bta3y3E9ZzLP2e2HECjd-sEGd for Arduino sketches. These were not written by me, but by an "amadorjosephg", judging from his email. 
+
+## Other open-source projects from the community
+Linux-based CAN bus interface - https://github.com/grayson-arendt/sparkcan
+(deprecated) SPARK MAX Server CLI Tool - https://github.com/REVrobotics/SPARK-MAX-Server
+
+## Running into Problems?
+- Note that for communication with multiple MAXes on one BUS, you will need a 120 termination resistor on both ends of the bus  the MAXes do not have their own. However, you should be able to get away with direct communication to a single MAX.
+- 
