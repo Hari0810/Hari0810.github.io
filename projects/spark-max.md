@@ -197,5 +197,6 @@ Only the first four bytes of the payload had a noticeable effect. Changing the f
 
 ### Known Frame IDs
 - Position Control - 0x2050101
-- Duty Cycle - 0x2052C80 (same as Ver. 24)
-- Unknown - 0x2050081, 0x2050001
+- Heartbeat - 0x2052C80 (same as Ver. 24)
+- Duty Cycle - 0x2050081 (same as Ver. 24)
+- Unknown - 0x2050001
