@@ -6,17 +6,20 @@ A guide to using the REV Robotics device outside the FRC ecosystem, as well as a
 
 ## Overview
 
-Ever since I posted on Reddit about how I was able to use Arduino to control a Spark Max over CAN BUS outside of FRC uses, I’ve had quite a few questions about it, so I will go through the entire setup and methodology here.
+Ever since I posted on Reddit about how I was able to control a Spark MAX over CAN BUS via Arduino, I’ve had quite a few questions about it, so I will go through the entire setup and methodology here.
 
 It is possible for the Spark MAX to be controlled over PWM alone - but using CAN BUS unlocks an array of new features, such as:
 - PID control for position and velocity
 - "on-the-fly" PID tuning
 - being able to receive analog sensor output + transmit over CAN BUS
 
+This was intended to be used on KSP's first liquid bipropellant rocket, Vega, in conjunction with the NEO 550 motor. However, due to multiple niche and quirky issues, we chose to bin the Spark MAX in favour of an open-source FOC-based VESC-compatible controller that supports Lisp scripting.
+
 ## Contents
 
 - Disassembly and Circuit schematic
 - How to control over CAN BUS via an Arduino/STM32/etc instead of FRC hardware
+- Reverse-engineering the Version 25 Firmware IDs
 
 ## Dissasembly
 
@@ -66,21 +69,44 @@ These mainly correspond to those that can be found in Rev Hardware Client:
 ### Setup
 Use the REV Hardware Client to downgrade the Spark Max to Firmware Version 24. It will not work on Version 25 and above.
 
-### Software Overview
-
 #### For Arduino 
 
-Hardware
-MCP2515
-Any microcontroller that supports SPI
+##### Hardware
+- MCP2515
+- Any microcontroller that supports SPI
 
-Software
-Refer to https://drive.google.com/drive/folders/1NHbtK66bta3y3E9ZzLP2e2HECjd-sEGd for Arduino sketches. These were not written by me, but by an "amadorjosephg", judging from his email. 
+##### Software
+- Refer to https://drive.google.com/drive/folders/1NHbtK66bta3y3E9ZzLP2e2HECjd-sEGd for Arduino sketches.
+- Note: These were not written by me, but by an "amadorjosephg", judging from his email.
 
-## Other open-source projects from the community
-Linux-based CAN bus interface - https://github.com/grayson-arendt/sparkcan
-(deprecated) SPARK MAX Server CLI Tool - https://github.com/REVrobotics/SPARK-MAX-Server
+#### For STM32
 
-## Running into Problems?
+- You have two options - use SPI or the inbuilt CAN transceiver
+
+##### Option 1: SPI Control
+- SPI is the same procedure as for Arduino
+- One would also have to set up the STM32duino core to program via Arduino IDE
+
+##### Option 2: Inbuilt CAN Controller + CAN Transceiver
+- Obtain an external CAN tranceiver, e.g. TJA1051
+- Code TBC
+
+### Other open-source communication projects from the community
+- Linux-based CAN bus interface - https://github.com/grayson-arendt/sparkcan
+- (deprecated) SPARK MAX Server CLI Tool - https://github.com/REVrobotics/SPARK-MAX-Server
+
+### Running into Problems?
 - Note that for communication with multiple MAXes on one BUS, you will need a 120 termination resistor on both ends of the bus  the MAXes do not have their own. However, you should be able to get away with direct communication to a single MAX.
-- 
+- Ensure that all MAXes are tied to a common ground.
+- Ensure all MAXes have a unique Device ID and that you are writing to that specific ID
+- CAN Bitrate MUST be 1MBPS
+
+## Reverse-engineering Version 25
+
+### Setup
+- Download usbrply
+- Download WireShark
+- Connect the MAX to a PC running REV Hardware Client
+
+### Procedure
+- TBC
