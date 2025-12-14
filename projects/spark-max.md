@@ -16,6 +16,19 @@ Ever since I posted on Reddit about how I was able to use Arduino to control a S
 ## Dissasembly
 TBC
 
+### Parts Used
+
+Microcontroller - STM32F302CC
+
+Motor Driver - DRV8320S
+
+MOSFET - PSMN1R0-30YLD
+
+CAN Transceiver - 6563MKD
+
+### Further References
+A similar breakdown can be found here: https://www.chiefdelphi.com/t/rev-spark-max-teardown/461514/3
+
 ## Circuit Schematic
 In progress
 
