@@ -115,8 +115,16 @@ Use the REV Hardware Client to downgrade the Spark Max to Firmware Version 24. I
 - Install WireShark
 - Connect the MAX to a PC running REV Hardware Client
 
-### Steps
+### Steps to capture USB packets
 - Follow the procedure outlined in the usbrply github repo, under 'Sample workflows > Capturing Windows traffic and replaying traffic in Python'
 
-### Procedure
+### Decoding a USB packet
 - TBC
+
+### My modified Python script to run CAN-over-USB commands
+
+
+### Known Frame IDs
+- Position Control - 0x2050101
+- Duty Cycle - 0x2052C80 (same as Ver. 24)
+- Unknown - 0x2050081, 0x2050001
