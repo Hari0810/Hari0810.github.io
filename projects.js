@@ -8,7 +8,7 @@ const projects = [
   {
     title: "Spark MAX Motor Controller - My Experience and Reverse Engineering",
     description: "A study of how a closed-source motor controller can be made open",
-    image: "images/ecu.jpg",
+    image: "images/spark-max.jpeg",
     slug: "spark-max"
   }
 ];
