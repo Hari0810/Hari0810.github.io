@@ -159,7 +159,7 @@ enum status_frame_id {
 - The USB frames can be found within the `replay.py` file itself
 - They will be of the form:
 
-```
+```bash
 # Heartbeat Command
 bulkWrite(0x02, b"\x00\x00\x00\x00\x80\x2C\x05\x82\x08\x00\x00\x00\x02\x00\x00\x00"
             b"\x00\x00\x00\x00\x00\x00\x00\x00")
@@ -174,7 +174,7 @@ Note that the hex digits are in little endian. This can be translated to:
 
 Another example:
 
-```
+```bash
 # Set Duty Cycle to 1%
 
 bulkWrite(0x02, b"\x00\x00\x00\x00\x81\x00\x05\x82\x08\x00\x00\x00\xB8\x1E\x05\x3E"
