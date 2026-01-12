@@ -1,0 +1,3 @@
+kramdown:
+  parse_block_html: false
+  parse_span_html: false
