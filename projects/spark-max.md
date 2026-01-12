@@ -173,13 +173,14 @@ Note that the hex digits are in little endian. This can be translated to:
 - 0x00000000
 
 Another example:
-
-~~~python
+{::nomarkdown}
+```python
 # Set Duty Cycle to 1%
 
 bulkWrite(0x02, b"\x00\x00\x00\x00\x81\x00\x05\x82\x08\x00\x00\x00\xB8\x1E\x05\x3E"
             b"\x00\x00\x00\x00\x00\x00\x00\x00")
-~~~
+```
+{:/nomarkdown}
 
 Translation
 - 0x00000000
