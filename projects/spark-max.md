@@ -191,7 +191,13 @@ Only the first four bytes of the payload had a noticeable effect. Changing the f
 
 
 ### My modified Python script to run CAN-over-USB commands
+Refer to https://github.com/Hari0810/Hari0810.github.io/blob/main/replay.py for an example of duty cycle control over USB. 
 
+I had also vibe-coded a similar script in C, that can run directly on a Linux system: https://github.com/Hari0810/Hari0810.github.io/blob/main/usb_replay.c
+
+A zip containing other files that may be of interest can be found in https://github.com/Hari0810/Hari0810.github.io/blob/main/sparkmax.zip. 
+
+These files were from a long while back, and I no longer have access to the NEO 550/Spark Max setup, so I do apologise for the lack of strong documentation.
 
 ### Known Frame IDs
 - Position Control - 0x2050101
