@@ -11,10 +11,12 @@ for a liquid bipropellant rocket engine.
 
 ## Key Features
 
-- STM32 microcontroller
-- 1 Mbps CAN bus
-- 24V / 2A solenoid valve drivers
+- STM32H7 176-pin microcontroller
+- CAN FD at 1MBPS+
+- 24V / 2A MOSFETs to drive solenoid valves and heaters
 - High-speed SPI sensors (10 MHz)
+- ADCs for 4-20mA industrial pressure and thermocouple sensors
+- Multiple power planes (24V, 12V, 3V3)
 
 ## Skills
 
